@@ -78,7 +78,9 @@
     <div class="row" style="padding-top: 60px; clear: both;">
         <div class="col-md-12 text-center">
             <p>
-                <small>基于PHP的社会医疗保障系统的设计与实现 - 王羽佳20134178</small>
+                <a href="<?php echo site_url(); ?>">
+                    <small>基于PHP的社会医疗保障系统的设计与实现 - 王羽佳20134178</small>
+                </a>
             </p>
         </div>
     </div>

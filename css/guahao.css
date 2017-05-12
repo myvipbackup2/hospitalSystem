@@ -22,7 +22,8 @@ body, button, input, select, textarea {
 body {
     color: #666666;
     max-width: 640px;
-    margin: 0 auto
+    margin: 0 auto;
+    background: #ffffff url(../images/geometry2.png) repeat;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -50,6 +51,7 @@ ul, ol, li {
 
 input, img {
     vertical-align: middle;
+    outline: none;
 }
 
 a, a:link {
@@ -597,37 +599,6 @@ a:hover {
     color: #fff;
 }
 
-/*����*/
-.part2 {
-    margin-top: 0.6rem;
-}
-
-.part2 table {
-    width: 98%;
-    display: block;
-    margin: 10px auto
-}
-
-.part2 table tr td {
-    width: 10%;
-    text-align: center;
-    font-size: 0.16rem
-}
-
-.part2 table tr td img {
-    width: 100%
-}
-
-.part2 h2 {
-    font-size: 0.25rem;
-    font-weight: bold;
-}
-
-.part2 table tr td span {
-    color: Red
-}
-
-/*�Һ�*/
 .part3 {
     margin-top: 0.6rem;
 }
@@ -664,9 +635,10 @@ a:hover {
     width: 75%;
     background: #edebec;
     font-size: 0.24rem;
-    maxont-size: 22px;
-    color: #b9b7b8;
+    color: #333;
     text-align: center;
+    border-radius: 5px;
+    outline: none;
 }
 
 .con_YuYue form .p lable {

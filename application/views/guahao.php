@@ -39,17 +39,20 @@
         <div class="wrap klg_wrap">
             <form id="subform" name="subform" action="" method="post" onsubmit="return false" accept-charset="utf-8">
                 <!--姓名-->
-                <p><label for="user_name">姓名：</label>
+                <p>
+                    <label for="user_name">姓名：</label>
                     <input type="text" id="hzName" name="hzName" value="请输入您的姓名"
                            onfocus="if (value ==='请输入您的姓名'){value =''}" onblur="if (value ===''){value='请输入您的姓名'}">
                 </p>
                 <!--电话-->
-                <p><label for="user_tel">电话：</label>
-                    <input type="text" id="hzContact" name="hzContact" value="手机号码(仅支持数字)"
-                           onfocus="if (value ==='手机号码(仅支持数字)'){value =''}" onblur="chk(this)" onclick="checkPhone()">
+                <p>
+                    <label for="user_tel">电话：</label>
+                    <input type="text" id="hzContact" name="hzContact" value="请输入手机号码"
+                           onfocus="if (value ==='请输入手机号码'){value =''}">
                 </p>
                 <!--预约时间-->
-                <p><label for="user_shijian">时间：</label>
+                <p>
+                    <label for="user_shijian">时间：</label>
                     <input type="text" id="datepicker_yy" name="hzTime" value="" required="required">
                 </p>
                 <!--预约专家-->
@@ -129,8 +132,18 @@
         </div>
     </section>
 </div>
-</div>
+
 <div class="clear"></div>
+
+<div class="row" style="padding-top: 60px; clear: both;">
+    <div class="col-md-12 text-center">
+        <p style="text-align: center">
+            <a href="<?php echo site_url(); ?>">
+                <small>基于PHP的社会医疗保障系统的设计与实现 - 王羽佳20134178</small>
+            </a>
+        </p>
+    </div>
+</div>
 
 <script>
     function add() {

@@ -37,7 +37,7 @@
 <div class="header">
     <div class="container">
         <div class="header-logo">
-            <a href="index.html"><img src="images/logo.png" alt="logo"/></a>
+            <a href="<?php echo base_url(); ?>"><img src="images/logo.png" alt="logo"/></a>
         </div>
         <div class="header-info">
             <?php
@@ -64,7 +64,7 @@
                 <li><a href="welcome/index" class="active"><span data-hover="主页">主页</span></a></li>
                 <li><a href="welcome/login"> <span data-hover="登录">登录</span></a></li>
                 <li><a href="welcome/register"> <span data-hover="注册">注册</span></a></li>
-                <li><a href="welcome/guahao"> <span data-hover="挂号预约">挂号预约</span></a></li>
+                <li><a href="javascript:;" id="guahao"> <span data-hover="挂号预约">挂号预约</span></a></li>
                 <li><a href="welcome/doctor"> <span data-hover="医师登录">医师登录</span></a></li>
             </ul>
             <!-- script-for-menu -->
@@ -116,23 +116,22 @@
             <ul class="rslides" id="slider3">
                 <li>
                     <div class="banner-text">
-                        <h1>We are here to care for you</h1>
-                        <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
-                            humour, or randomised words which don't look even slightly believable.</p>
+                        <h1>设计目的</h1>
+                        <p>
+                            医疗产业的发展密切关系到国民的生活质量，随着中国经济的腾飞，国民的生活越来越丰富的同时，还希望得到医疗方面高质量的服务，而医疗产业也迫切的需要管理系统的升级包括方便性、快捷性、准确性</p>
                     </div>
                 </li>
                 <li>
                     <div class="banner-text">
-                        <h1>Lorem ip sum avai re for cayou</h1>
-                        <p>Majority have sufferedorem lipsum available, but the alteration in some form, by injected
-                            humour, or randomised words which don't look even slightly believable.</p>
+                        <h1>本系统使用技术</h1>
+                        <p>
+                            本系统是运用php、javascript等技术对医院的多个部门进行全方位管理，该系统涉及到医院大部分业务过程，属于信息管理系统。本文主要工作是研究“基于PHP的社会医疗保障系统的设计与实现”，对基于PHP的社会医疗保障系统进行了需求分析和网站总体设计以及细节功能设计与实现</p>
                     </div>
                 </li>
                 <li>
                     <div class="banner-text">
-                        <h1>Availf able lor emip cayou refor</h1>
-                        <p>Randomised words orem ipsum available, but the majority have suffered alteration in some
-                            form, by injected humour, or which don't look even slightly believable.</p>
+                        <h1>实现功能</h1>
+                        <p>基于PHP的社会医疗保障系统一共分了三部分：个人系统，医院系统，药店系统。</p>
                     </div>
                 </li>
             </ul>
@@ -143,7 +142,7 @@
 <!--banner-bottom-->
 <div class="banner-bottom">
     <div class="container">
-        <h2>Lorem Ipsum was popularised in the with the release of Letraset sheets containing</h2>
+        <h2>社会医疗保障系统的优势</h2>
         <a href="#gallery" class="arrow scroll"> </a>
     </div>
 </div>
@@ -151,20 +150,24 @@
 <!--gallery-->
 <div class="gallery" id="gallery">
     <div class="col-md-6 gallery-left">
-        <h4>Letraset sheets</h4>
-        <p>Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe with the release
-            of </p>
+        <h4>系统要实现的主要功能</h4>
+        <p>患者端：病人去医院看病，登录系统时的角度
+            挂号：用户可以在线上就完成了挂号的所有手续
+            医生端：医生在看病时，登录系统时的角度
+        </p>
     </div>
     <div class="col-md-6 gallery-right">
         <div class="gallery-grid-a">
-            <h4>Letraset sheets</h4>
-            <p>Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe with the release
-                of </p>
+            <h4>研究意义</h4>
+            <p>
+                医院简而言之，就是要解决国民身体问题的问题，随着生活压力的增加，国家的身体也出现了各种各样的条件，患者不断扩大...
+            </p>
         </div>
         <div class="gallery-grid-b">
-            <h4>Letraset sheets</h4>
-            <p>Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe with the release
-                of </p>
+            <h4>社会医疗保障系统的优势</h4>
+            <p>
+                当前社会是电子信息产业的蓬勃发展，以阿里巴巴，腾讯，UF，波浪为代表的一批电子信息公司的崛起意味着中国的信息时代已经到来...
+            </p>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -174,8 +177,8 @@
 <div class="work">
     <div class="container">
         <div class="work-title">
-            <h3>More projects</h3>
-            <p>Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe</p>
+            <h3>关于我的毕业设计</h3>
+            <p>基于PHP的社会医疗保障系统的设计与实现 - 王羽佳20134178</p>
         </div>
         <div class="col-md-4 work-grids">
             <ul>
@@ -211,54 +214,7 @@
     </div>
 </div>
 <!--//work-->
-<div class="copyrights">Collect from <a href="http://www.cssmoban.com/">企业网站模板</a></div>
-<div class="like">
-    <div class="container">
-        <div class="work-title">
-            <h3>Stay connected with us</h3>
-            <p class="cnnct">Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe</p>
-        </div>
-        <div class="col-md-3 like-grids">
-            <a href="#">
-                <img src="images/icon1.png" alt=""/>
-            </a>
-            <p>Facebook</p>
-        </div>
-        <div class="col-md-3 like-grids">
-            <a href="#">
-                <img src="images/icon5.png" alt=""/>
-            </a>
-            <p>Twitter</p>
-        </div>
-        <div class="col-md-3 like-grids">
-            <a href="#">
-                <img src="images/icon6.png" alt=""/>
-            </a>
-            <p>Pinterest</p>
-        </div>
-        <div class="col-md-3 like-grids">
-            <a href="#">
-                <img src="images/icon7.png" alt=""/>
-            </a>
-            <p>Googleplus</p>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!--map-->
-<div class="map">
-    <div class="container">
-        <div class="map-info">
-            <ul>
-                <li>Head office</li>
-                <li>Anore Road-22</li>
-                <li>New York,USA-0000</li>
-                <li>111 222 555</li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--//map-->
+
 <!--footer-->
 <div class="footer">
     <div class="container">
@@ -316,6 +272,23 @@
         </p>
     </div>
 </div>
+
+<!--错误弹层-->
+<div class="modal fade" id="err" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalLabel">挂号失败</h4>
+            </div>
+            <div class="modal-body" id="errReason">请先登录！</div>
+            <div class="modal-footer">
+                <button id="goLogin" type="button" class="btn btn-primary" data-dismiss="modal">去登录</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
 <!--smooth-scrolling-of-move-up-->
 <script type="text/javascript">
     $(document).ready(function () {
@@ -323,10 +296,25 @@
     });
 </script>
 <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-<!--//smooth-scrolling-of-move-up-->
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+
 <script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('#guahao').on('click', function () {
+            var logined = <?php if ($login_user) {
+                echo 1;
+            } else echo 0;?>;
+            if (logined) {
+                window.location.href = '<?php echo base_url()?>/welcome/guahao';
+            } else {
+                $('#err').modal();
+            }
+        });
+        $('#goLogin').on('click', function () {
+            window.location.href = '<?php echo base_url()?>/welcome/login';
+        });
+    });
+</script>
+
 </body>
 </html>

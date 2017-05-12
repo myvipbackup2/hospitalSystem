@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>王羽佳20134178</title>
-    <base href="<?php echo site_url(); ?>">
+    <base href="<?php echo base_url(); ?>">
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/index.css" type="text/css" rel="stylesheet" media="all">
     <!-- Custom Theme files -->
@@ -40,8 +40,15 @@
             <a href="index.html"><img src="images/logo.png" alt="logo"/></a>
         </div>
         <div class="header-info">
-            <p>未登录</p>
-            <h4><a style='color: #fff; font-size: ' href="<?php echo base_url();?>/welcome/login">请先登录</a></h4>
+            <?php
+            $login_user = $this->session->userdata('userinfo');
+            if ($login_user) { ?>
+                <p><a style="color: #fff;" href="user/logo_out">退出登录</a></p>
+                <h4><?php echo $login_user->username ?></h4>
+            <?php } else { ?>
+                <p>未登录</p>
+                <h4><a style='color: #fff; font-size: ' href="<?php echo base_url(); ?>/welcome/login">请先登录</a></h4>
+            <?php } ?>
         </div>
         <div class="clearfix"></div>
     </div>

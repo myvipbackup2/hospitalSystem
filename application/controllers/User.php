@@ -17,6 +17,7 @@ class User extends CI_Controller
         $this->load->model('user_model');
     }
 
+    //注册
     public function do_register()
     {
         $username = $this->input->post('userName');
@@ -39,6 +40,39 @@ class User extends CI_Controller
         } else {
             echo "check_username success";
         }
+    }
+
+    //登录
+    public function do_login()
+    {
+        $username = $this->input->post('userName');
+        $password = $this->input->post('password');
+        $result = $this->user_model->get_by_username_pwd($username, $password);
+        if ($result) {
+            $this->session->set_userdata('userinfo', $result);//登录成功写入session
+            echo 'success';
+        } else {
+            echo 'fail';
+        }
+    }
+
+    //检查是否登录
+    public function check_login()
+    {
+        $login_user = $this->session->userdata('userinfo');
+        if ($login_user) {
+            echo "success";
+        } else {
+            $this->input->set_cookie("prev_url", $_SERVER['HTTP_REFERER'], 3600);
+            echo "fail";
+        }
+    }
+
+    //退出登录
+    public function logo_out()
+    {
+        $this->session->unset_userdata('userinfo');
+        redirect('welcome/index');
     }
 
 

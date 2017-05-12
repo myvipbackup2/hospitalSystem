@@ -50,7 +50,7 @@
         <div class="col-md-4 col-md-offset-4">
 
             <!-- Start Sign In Form -->
-            <form action="#" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+            <div class="fh5co-form animate-box" data-animate-effect="fadeIn">
                 <h2>用户登录</h2>
                 <div class="form-group">
                     <label for="username" class="sr-only">用户名</label>
@@ -68,9 +68,9 @@
                     </p>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="登录" class="btn btn-primary">
+                    <input type="submit" id="login" value="登录" class="btn btn-primary">
                 </div>
-            </form>
+            </div>
             <!-- END Sign In Form -->
 
         </div>
@@ -83,6 +83,22 @@
                 </a>
             </p>
         </div>
+    </div>
+
+    <!--错误弹层-->
+    <div class="modal fade" id="err" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="modalLabel">登录失败</h4>
+                </div>
+                <div class="modal-body" id="errReason">失败原因未知...</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
     </div>
 </div>
 
@@ -97,6 +113,35 @@
 <!-- Main JS -->
 <script src="js/main.js"></script>
 
+<script>
+    $(function () {
+        $('#login').on('click', function () {
+            $username = $('#username').val();
+            $password = $('#password').val();
+            if ($username === '') {
+                $('#errReason').html('用户名不能为空！');
+                $('#err').modal();
+            } else if ($password === '') {
+                $('#errReason').html('密码不能为空！');
+                $('#err').modal();
+            } else {
+                $.post('user/do_login', {
+                    userName: $username,
+                    password: $password
+                }, function (res) {
+                    if (res === 'success') {
+                        window.location.href = '<?php echo base_url();?>'
+                    } else {
+                        $('#errReason').html('用户名或密码错误！');
+                        $('#err').modal();
+                    }
+                });
+            }
+
+        });
+
+    });
+</script>
 
 </body>
 </html>

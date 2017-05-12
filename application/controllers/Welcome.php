@@ -6,8 +6,7 @@ class Welcome extends CI_Controller
 
     public function index()
     {
-
-
+        $this->load->view('index');
     }
 
     public function login()
@@ -19,5 +18,16 @@ class Welcome extends CI_Controller
     {
         $this->load->view('register');
     }
+
+    public function doctor()
+    {
+
+    }
+
+    public function guahao()
+    {
+        $this->load->view('guahao');
+    }
+
 
 }

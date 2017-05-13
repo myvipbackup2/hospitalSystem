@@ -181,9 +181,8 @@
             <ul>
                 <li><img src="images/icon2.png" alt=""></li>
                 <li>
-                    <h4>Quas molestias excep</h4>
-                    <p>praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                        occaecati cupiditate non provident</p>
+                    <h4>医生端</h4>
+                    <p>对就诊的患者填写医嘱，并且对非本科室的患者转子其他科室，填写对患者的治疗方案并传给治疗部门，查询患者的既往病史以更好的判断患者的症状，给出更好的治疗方案，并且查询自己的排班值班信息</p>
                 </li>
             </ul>
         </div>
@@ -191,9 +190,8 @@
             <ul>
                 <li><img src="images/icon3.png" alt=""></li>
                 <li>
-                    <h4>occaecati cupiusint</h4>
-                    <p>praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                        occaecati cupiditate non provident</p>
+                    <h4>登录注册</h4>
+                    <p>登陆注册模块主要是完成系统普通用户登陆信息校验功能以及无账号用户的登录信息注册功能，用户登陆的时候，系统会对输入的信息进行核对，用户名密码正确的话能够成功登陆，用户名密码错误则无法登陆</p>
                 </li>
             </ul>
         </div>
@@ -201,9 +199,8 @@
             <ul>
                 <li><img src="images/icon4.png" alt=""></li>
                 <li>
-                    <h4>Excepturi sint occa</h4>
-                    <p>praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                        occaecati cupiditate non provident</p>
+                    <h4>挂号端</h4>
+                    <p>护士管理员人工帮助患者查询肾虚门诊、挂号、退号、缴费并报销医保，并在医生同意的情况下，给患者加号。对需要住院的患者办理住院手续。</p>
                 </li>
             </ul>
         </div>
@@ -217,44 +214,42 @@
     <div class="container">
         <div class="footer-grids">
             <div class="col-md-4 recent-posts">
-                <h4>Recent posts</h4>
+                <h4>最近评价</h4>
                 <div class="recent-posts-text">
-                    <h5>MARCH 30, 2015</h5>
-                    <p>Duis autem vel eum iriure dolor</p>
+                    <h5>MARCH 30, 2016</h5>
+                    <p>医生态度非常好</p>
                 </div>
                 <div class="recent-posts-text">
-                    <h5>MARCH 15, 2015</h5>
-                    <p>Duis autem vel eum iriure dolor</p>
+                    <h5>MARCH 15, 2016</h5>
+                    <p>很快就好了</p>
                 </div>
                 <div class="recent-posts-text">
-                    <h5>MARCH 3, 2015</h5>
-                    <p>Duis autem vel eum iriure dolor</p>
-                </div>
-            </div>
-            <div class="col-md-4 recent-posts">
-                <h4>Twiter feeds</h4>
-                <div class="recent-posts-text">
-                    <h5>about 2 days ago<span>@kristit</span></h5>
-                    <p>Good work buddy</p>
-                </div>
-                <div class="recent-posts-text">
-                    <h5>about 2 days ago <span>@fasteven</span></h5>
-                    <p>Good work buddy</p>
-                </div>
-                <div class="recent-posts-text">
-                    <h5>about 2 days ago <span>@streamer</span></h5>
-                    <p>Good work buddy</p>
+                    <h5>MARCH 3, 2016</h5>
+                    <p>他们就是天使</p>
                 </div>
             </div>
             <div class="col-md-4 recent-posts">
-                <h4>Our address</h4>
-                <p class="adrs">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas
-                    est etiam processus dynamicus,
-                    facilisi Nam liber tempor cum soluta </p>
+                <h4>大众点评</h4>
+                <div class="recent-posts-text">
+                    <h5>about 2 days ago<span>@小李</span></h5>
+                    <p>王羽佳20134178</p>
+                </div>
+                <div class="recent-posts-text">
+                    <h5>about 2 days ago <span>@小红</span></h5>
+                    <p>王羽佳20134178</p>
+                </div>
+                <div class="recent-posts-text">
+                    <h5>about 2 days ago <span>@小李</span></h5>
+                    <p>王羽佳20134178</p>
+                </div>
+            </div>
+            <div class="col-md-4 recent-posts">
+                <h4>我的地址</h4>
+                <p class="adrs">王羽佳20134178 </p>
                 <ul>
-                    <li><span></span>Moonshine St. 14/05 Light, Japan</li>
-                    <li><span class="ph-no"></span>+00 (123) 111 11 11</li>
-                    <li><span class="mail"></span><a href="mailto:example@mail.com">mail@example.com</a></li>
+                    <li><span></span>王羽佳20134178</li>
+                    <li><span class="ph-no"></span>王羽佳20134178</li>
+                    <li><span class="mail"></span><a href="mailto:example@mail.com">王羽佳20134178</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

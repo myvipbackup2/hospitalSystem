@@ -164,7 +164,7 @@
         //表单提交处理
         var hzName = $('#hzName').val();
         var hzContact = $('#hzContact').val();
-        var hzTime = $('#datepicker_yy').val();
+        var hzTime = $('#datePicker').val();
         var addTime = $('#addTime').val();
         var bztype = $('#bztype').val();
         var content = $('#content').val();

@@ -26,7 +26,20 @@ class Welcome extends CI_Controller
 
     public function guahao()
     {
-        $this->load->view('guahao');
+        if ($this->check_login()) {
+            $this->load->view('guahao');
+        } else {
+            redirect('welcome/login');
+        }
+    }
+
+    public function check_login()
+    {
+        if ($this->session->userdata('userinfo')) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

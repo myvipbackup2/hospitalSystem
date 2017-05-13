@@ -134,7 +134,7 @@
             </div>
             <div class="modal-body" id="errReason">失败原因未知...</div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                <button type="button" id="sub" class="btn btn-primary" data-dismiss="modal">确定</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
@@ -170,37 +170,56 @@
         var content = $('#content').val();
         var laiyuan = $('#laiyuan').val();
         var hfTime = $('#hfTime').val();
-        var urls = '/?m=addpatientgh&a=add';
+        var urls = 'welcome/do_gaohao';
         //ajax返回
-        $.ajax({
-            url: urls,
-            data: {
-                hzName: hzName,
-                hzContact: hzContact,
-                hzTime: hzTime,
-                content: content,
-                addTime: addTime,
-                bztype: bztype,
-                laiyuan: laiyuan,
-                hfTime: hfTime
-            },
-            type: 'post',
-            success: function (data) {
-                if (data == 1 || data == 0) {
-                    alert('添加成功！');
+        $.post('welcome/do_guahao', {
+            hzName : hzName,
+            hzContact : hzContact,
+            hzTime : hzTime,
+            content : content
+        }, function (res) {
+                if (res === 'success') {
+                    $('#modalLabel').html('挂号成功');
+                    $('#errReason').html('点击去首页');
+                    $('#sub').html('去首页').on('click',function () {
+                        window.location.href = 'welcome'
+                    });
+                    $('#err').modal();
                 } else {
-                    alert('添加失败！请输入正确的信息...');
+                    $('#modalLabel').html('挂号失败');
+                    $('#errReason').html('网络异常');
+                    $('#err').modal();
                 }
-                $('#hzName').val(' ');
-                $('#hzContact').val(' ');
-                $('#datepicker_yy').val(' ');
-                //$('#addTime').val(' ');
-                $('#bztype').val(' ');
-                $('#content').val(' ');
-                $('#laiyuan').val(' ');
-                //$('#hfTime').val(' ');
-            }
-        })
+            });
+//        $.ajax({
+//            url: urls,
+//            data: {
+//                hzName: hzName,
+//                hzContact: hzContact,
+//                hzTime: hzTime,
+//                content: content,
+//                addTime: addTime,
+//                bztype: bztype,
+//                laiyuan: laiyuan,
+//                hfTime: hfTime
+//            },
+//            type: 'post',
+//            success: function (data) {
+//                if (data == 1 || data == 0) {
+//                    alert('添加成功！');
+//                } else {
+//                    alert('添加失败！请输入正确的信息...');
+//                }
+//                $('#hzName').val(' ');
+//                $('#hzContact').val(' ');
+//                $('#datepicker_yy').val(' ');
+//                //$('#addTime').val(' ');
+//                $('#bztype').val(' ');
+//                $('#content').val(' ');
+//                $('#laiyuan').val(' ');
+//                //$('#hfTime').val(' ');
+//            }
+//        })
     }
 
 </script>

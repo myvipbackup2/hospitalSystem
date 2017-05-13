@@ -27,5 +27,15 @@ class User_model extends CI_Model
         ));
         return $this->db->insert_id();
     }
+    public function do_guahao($username,$tel,$time,$content)
+    {
+        $this->db->insert('guahao', array(
+            "hzName" => $username,
+            "hzContact" => $tel,
+            "hzTime" => $time,
+            "content" => $content
+        ));
+        return $this->db->affected_rows();
+    }
 
 }

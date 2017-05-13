@@ -42,5 +42,19 @@ class Welcome extends CI_Controller
         }
     }
 
+    public function do_guahao()
+    {
+        $userName = $this->input->post("hzName");
+        $tel = $this->input->post("hzContact");
+        $time = $this->input->post("hzTime");
+        $content = $this->input->post("content");
+        $this->load->model('user_model');
+        $row= $this->user_model->do_guahao($userName,$tel,$time,$content);
+        if ($row){
+            echo "success";
+        }else{
+            echo "fail";
+        }
 
+    }
 }

@@ -11,7 +11,7 @@
  Target Server Version : 50635
  File Encoding         : utf-8
 
- Date: 05/12/2017 21:44:22 PM
+ Date: 05/13/2017 13:06:26 PM
 */
 
 SET NAMES utf8mb4;
@@ -78,6 +78,25 @@ CREATE TABLE `guahao` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `guahao` VALUES ('8278', '2017-05-09 10:43:46', '', '测试', '2017-05-12', '18785584578', 'file:///C:/Users/Administrator/Desktop/guahao/index.html', '这里是测试的内容！', '2017-05-09', '', '0', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0', '0', '3', '0', '', '0', '0', 'RAIN_qxmark', '0'), ('8280', '2017-05-09 14:17:18', '', '大海', '2017-05-09', '15478458784', 'file:///C:/Users/Administrator/Desktop/ghao/index.html', '测试乖哦啊', '2017-05-08', '', '0', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0', '0', '1', '0', '', '0', '0', '1', '0'), ('8281', '2017-05-09 14:40:20', 'RAIN_NAME', '小鱼儿', '2017-05-10', '18788858303', 'file:///C:/Users/Administrator/Desktop/guahao/index.html', '小鱼儿在这里测试数据，看看这个系统到底有没有用的！', '2017-05-09', '', '0', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0', '0', '1', '0', '', '0', null, 'RAIN_qxmark', '0');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `t_user`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_user`;
+CREATE TABLE `t_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户表',
+  `username` varchar(30) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `relname` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `t_user`
+-- ----------------------------
+BEGIN;
+INSERT INTO `t_user` VALUES ('1', '123qwe', 'e10adc3949ba59abbe56e057f20f883e', '王羽佳');
 COMMIT;
 
 -- ----------------------------

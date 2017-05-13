@@ -63,9 +63,9 @@
             <ul class="nav1">
                 <li><a href="welcome/index" class="active"><span data-hover="主页">主页</span></a></li>
                 <?php
-                if (!$login_user) {?>
-                <li><a href="welcome/login"> <span data-hover="登录">登录</span></a></li>
-                <li><a href="welcome/register"> <span data-hover="注册">注册</span></a></li>
+                if (!$login_user) { ?>
+                    <li><a href="welcome/login"> <span data-hover="登录">登录</span></a></li>
+                    <li><a href="welcome/register"> <span data-hover="注册">注册</span></a></li>
                 <?php } ?>
                 <li><a href="javascript:;" id="guahao"> <span data-hover="挂号预约">挂号预约</span></a></li>
                 <li><a href="welcome/doctor"> <span data-hover="医师登录">医师登录</span></a></li>
@@ -302,7 +302,7 @@
                 echo 1;
             } else echo 0;?>;
             if (logined) {
-                window.location.href = '<?php echo base_url()?>/welcome/guahao';
+                window.location.href = '<?php echo base_url()?>welcome/guahao';
             } else {
                 $('#err').modal();
             }

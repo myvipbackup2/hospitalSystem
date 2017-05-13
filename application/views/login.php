@@ -64,7 +64,7 @@
                     <label for="remember"><input type="checkbox" id="remember"> 记住我</label>
                 </div>
                 <div class="form-group">
-                    <p>没有注册? <a href="welcome/register">注册</a>| <a href="welcome">返回首页</a>
+                    <p>没有帐号? <a href="welcome/register">注册</a> | <a href="welcome">返回首页</a>
                     </p>
                 </div>
                 <div class="form-group">

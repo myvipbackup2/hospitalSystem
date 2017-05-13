@@ -20,7 +20,8 @@
 
 <!--预约挂号-->
 <div class="part3">
-    <div class="alert alert-success "><h1>欢迎进入挂号页面！</h1></div>
+    <div class="alert alert-success "><h1><?php echo $this->session->userdata('userinfo')->username ?>欢迎您进入挂号页面！</h1>
+    </div>
     <section class="box-12 con_YuYue">
         <div class="wrap klg_wrap">
             <form id="subform" name="subform" action="" method="post" onsubmit="return false" accept-charset="utf-8">
@@ -207,7 +208,6 @@
 <script>
     $(function () {
         $('#datePicker').on('click', function () {
-            console.log($(this).offset().left);
             $('.datepicker').css({
                 left: $(this).offset().left + 100,
                 top: $(this).offset().top + 40

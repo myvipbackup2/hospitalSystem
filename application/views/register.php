@@ -50,11 +50,8 @@
                            autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="remember"><input type="checkbox" id="remember"> 记住我</label>
-                </div>
-                <div class="form-group">
                     <p>已有帐号?
-                        <a href="welcome/login">登录</a>| <a href="welcome">返回首页</a></p>
+                        <a href="welcome/login">登录</a> | <a href="welcome">返回首页</a></p>
                     </p>
                 </div>
                 <div class="form-group">

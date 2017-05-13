@@ -172,25 +172,25 @@
         var hfTime = $('#hfTime').val();
         var urls = 'welcome/do_gaohao';
         //ajax返回
-        $.post('welcome/do_guahao', {
-            hzName : hzName,
-            hzContact : hzContact,
-            hzTime : hzTime,
-            content : content
+        $.post('user/do_guahao', {
+            hzName: hzName,
+            hzContact: hzContact,
+            hzTime: hzTime,
+            content: content
         }, function (res) {
-                if (res === 'success') {
-                    $('#modalLabel').html('挂号成功');
-                    $('#errReason').html('点击去首页');
-                    $('#sub').html('去首页').on('click',function () {
-                        window.location.href = 'welcome'
-                    });
-                    $('#err').modal();
-                } else {
-                    $('#modalLabel').html('挂号失败');
-                    $('#errReason').html('网络异常');
-                    $('#err').modal();
-                }
-            });
+            if (res === 'success') {
+                $('#modalLabel').html('挂号成功');
+                $('#errReason').html('点击去首页');
+                $('#sub').html('去首页').on('click', function () {
+                    window.location.href = 'welcome'
+                });
+                $('#err').modal();
+            } else {
+                $('#modalLabel').html('挂号失败');
+                $('#errReason').html('网络异常');
+                $('#err').modal();
+            }
+        });
 //        $.ajax({
 //            url: urls,
 //            data: {

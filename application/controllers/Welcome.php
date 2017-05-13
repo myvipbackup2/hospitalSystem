@@ -4,26 +4,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller
 {
 
+    //显示首页
     public function index()
     {
         $this->load->view('index');
     }
 
+    //登录
     public function login()
     {
         $this->load->view('login');
     }
 
+    //注册
     public function register()
     {
         $this->load->view('register');
     }
 
+    //医生登录后台
     public function doctor()
     {
 
     }
 
+    //挂号页面
     public function guahao()
     {
         if ($this->check_login()) {
@@ -33,6 +38,7 @@ class Welcome extends CI_Controller
         }
     }
 
+    //检测用户是否登录
     public function check_login()
     {
         if ($this->session->userdata('userinfo')) {
@@ -42,19 +48,4 @@ class Welcome extends CI_Controller
         }
     }
 
-    public function do_guahao()
-    {
-        $userName = $this->input->post("hzName");
-        $tel = $this->input->post("hzContact");
-        $time = $this->input->post("hzTime");
-        $content = $this->input->post("content");
-        $this->load->model('user_model');
-        $row= $this->user_model->do_guahao($userName,$tel,$time,$content);
-        if ($row){
-            echo "success";
-        }else{
-            echo "fail";
-        }
-
-    }
 }

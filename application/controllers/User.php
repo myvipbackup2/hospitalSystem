@@ -20,8 +20,8 @@ class User extends CI_Controller
     //注册
     public function do_register()
     {
-        $username = $this->input->post('userName');
-        $password = $this->input->post('password');
+        $username = htmlspecialchars($this->input->post('userName'));
+        $password = htmlspecialchars($this->input->post('password'));
         $result = $this->user_model->add_user($username, $password);
         if ($result > 0) {
             echo 'success';
@@ -73,6 +73,21 @@ class User extends CI_Controller
     {
         $this->session->unset_userdata('userinfo');
         redirect('welcome/index');
+    }
+
+    //挂号
+    public function do_guahao()
+    {
+        $userName = htmlspecialchars($this->input->post("hzName"));
+        $tel = htmlspecialchars($this->input->post("hzContact"));
+        $time = $this->input->post("hzTime");
+        $content = htmlspecialchars($this->input->post("content"));
+        $row = $this->user_model->do_guahao($userName, $tel, $time, $content);
+        if ($row) {
+            echo "success";
+        } else {
+            echo "fail";
+        }
     }
 
 

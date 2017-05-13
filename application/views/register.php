@@ -53,7 +53,9 @@
                     <label for="remember"><input type="checkbox" id="remember"> 记住我</label>
                 </div>
                 <div class="form-group">
-                    <p>已有帐号? <a href="welcome/login">登录</a></p>
+                    <p>已有帐号?
+                        <a href="welcome/login">登录</a>| <a href="welcome">返回首页</a></p>
+                    </p>
                 </div>
                 <div class="form-group">
                     <input type="submit" id="register" value="注册" class="btn btn-primary">
@@ -123,7 +125,7 @@
                         $('#err').modal();
                     }
                 });
-            } else if ($password === $repw) {
+            } else if ($password !== $repw) {
                 $('#errReason').html('两次密码输入不一致！');
                 $('#err').modal();
             }

@@ -6,35 +6,21 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <base href="<?php echo site_url(); ?>">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
     <link href="css/guahao.css" rel="stylesheet" type="text/css"/>
-    <link href="css/jquery.ui.base.css" rel="stylesheet" type="text/css"/>
-    <link href="css/jquery.ui.theme.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/m_style.js"></script>
-    <script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.core.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/jquery.ui.datepicker.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 
-    <!--预约时间-->
-    <script language="javascript">
-        $(function () {
-            $("#datepicker_yy,#datepicker_hf,#datepicker_xdz,#datepicker_xhf").datepicker();
-        });
-        $(document).ready(function () {
-            $("input:radio").click(function () {
-                var a = $('input:radio[id="way"]:checked').val();
-                if (a == 2) {
-                    $("#media").show();
-                } else {
-                    $("#media").hide();
-                }
-            })
-        });
-    </script>
 </head>
 <body>
 
+
 <!--预约挂号-->
 <div class="part3">
+    <div class="alert alert-success "><h1>欢迎进入挂号页面！</h1></div>
     <section class="box-12 con_YuYue">
         <div class="wrap klg_wrap">
             <form id="subform" name="subform" action="" method="post" onsubmit="return false" accept-charset="utf-8">
@@ -47,13 +33,15 @@
                 <!--电话-->
                 <p>
                     <label for="user_tel">电话：</label>
-                    <input type="text" id="hzContact" name="hzContact" value="请输入手机号码"
-                           onfocus="if (value ==='请输入手机号码'){value =''}">
+                    <input type="text" id="hzContact" name="hzContact" value="请输入手机号码" maxlength="11"
+                           onfocus="if (value ==='请输入手机号码'){value =''}" onblur="if (value ===''){value='请输入手机号码'}">
                 </p>
                 <!--预约时间-->
                 <p>
                     <label for="user_shijian">时间：</label>
-                    <input type="text" id="datepicker_yy" name="hzTime" value="" required="required">
+                    <input id="datePicker" type="text" value="请选择时间" onfocus="if (value ==='请选择时间'){value =''}"
+                           onblur="if (value ===''){value='请选择时间'}">
+
                 </p>
                 <!--预约专家-->
                 <div class="add-lan" style="display:none">
@@ -124,7 +112,7 @@
 
                 <!--提交-->
                 <div id="btn">
-                    <input type="submit" name="gh_submit" value="立刻提交" style="background:#ff9c00; margin-right:.55rem"
+                    <input type="submit" name="gh_submit" value="提交挂号" style="background:#ff9c00; margin-right:.55rem"
                            onclick="add()">
                     <input type="reset" value="重新填写" style="background:#039d83;">
                 </div>
@@ -134,6 +122,22 @@
 </div>
 
 <div class="clear"></div>
+
+<!--错误弹层-->
+<div class="modal fade" id="err" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalLabel">登录失败</h4>
+            </div>
+            <div class="modal-body" id="errReason">失败原因未知...</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 
 <div class="row" style="padding-top: 60px; clear: both;">
     <div class="col-md-12 text-center">
@@ -148,9 +152,10 @@
 <script>
     function add() {
         //验证手机号码
-        var phone = document.getElementById('hzContact').value;
-        if (!(/^1(3|4|5|7|8)\d{9}$/.test(phone))) {
-            alert("手机号码有误，请重填");
+        var $phone = $('#hzContact').val();
+        if (!(/^1(3|4|5|7|8)\d{9}$/.test($phone))) {
+            $('#errReason').html('请填写正确手机号!');
+            $('#err').modal();
             return false;
         }
         //提取来源页面
@@ -197,6 +202,25 @@
         })
     }
 
+</script>
+
+<script>
+    $(function () {
+        $('#datePicker').on('click', function () {
+            console.log($(this).offset().left);
+            $('.datepicker').css({
+                left: $(this).offset().left + 100,
+                top: $(this).offset().top + 40
+            });
+        });
+
+        $('#datePicker').datepicker({
+            language: 'zh-CN',
+            format: "yyyy-mm-dd",
+            autoclose: true,
+            todayHighlight: true
+        });
+    });
 </script>
 
 </body>

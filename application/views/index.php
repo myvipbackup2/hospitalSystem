@@ -62,8 +62,11 @@
             <span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>
             <ul class="nav1">
                 <li><a href="welcome/index" class="active"><span data-hover="主页">主页</span></a></li>
+                <?php
+                if (!$login_user) {?>
                 <li><a href="welcome/login"> <span data-hover="登录">登录</span></a></li>
                 <li><a href="welcome/register"> <span data-hover="注册">注册</span></a></li>
+                <?php } ?>
                 <li><a href="javascript:;" id="guahao"> <span data-hover="挂号预约">挂号预约</span></a></li>
                 <li><a href="welcome/doctor"> <span data-hover="医师登录">医师登录</span></a></li>
             </ul>
@@ -77,12 +80,6 @@
             <!-- /script-for-menu -->
         </div>
         <!--//top-nav-->
-        <form class="navbar-form navbar-right">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <button type="submit" class="btn btn-default"></button>
-            </div>
-        </form>
         <div class="clearfix"></div>
     </div>
 </div>

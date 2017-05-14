@@ -53,20 +53,20 @@
                 <h2>预约挂号</h2>
                 <div class="form-group">
                     <label for="username" class="sr-only">姓名</label>
-                    <input type="text" class="form-control" id="username" placeholder="请输入姓名" autocomplete="off">
+                    <input type="text" class="form-control" id="username" placeholder="请输入患者姓名" autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="tel" class="sr-only">手机号</label>
+                    <label id="telLabel" for="tel" class="sr-only">手机号</label>
                     <input type="tel" class="form-control" maxlength="11" id="tel" placeholder="请输入手机号"
                            autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="date" class="sr-only">预约日期</label>
+                    <label for="date">预约日期</label>
                     <input type="date" class="form-control" id="date" placeholder="请选择预约日期" autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="name">选择专家</label>
-                    <select class="form-control">
+                    <label for="doctor">选择专家</label>
+                    <select id="doctor" class="form-control">
                         <option>专家1</option>
                         <option>专家2</option>
                         <option>专家3</option>
@@ -80,8 +80,8 @@
                               autocomplete="off"></textarea>
                 </div>
                 <div class="form-group text-center">
-                    <input type="reset" id="reset" value="重新填写" class="btn btn-warning">
-                    <input type="button" id="login" value="立即挂号" class="btn btn-primary">
+                    <input type="reset" value="重新填写" class="btn btn-warning">
+                    <input type="button" id="submit" value="立即挂号" class="btn btn-primary">
                 </div>
                 <div class="form-group">
                     <p><a href="welcome"><i class="	glyphicon glyphicon-arrow-left"></i>返回首页</a></p>
@@ -106,7 +106,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="modalLabel">登录失败</h4>
+                    <h4 class="modal-title" id="modalLabel">挂号失败</h4>
                 </div>
                 <div class="modal-body" id="errReason">失败原因未知...</div>
                 <div class="modal-footer">
@@ -130,24 +130,58 @@
 
 <script>
     $(function () {
-        $('#login').on('click', function () {
+
+        //正则验证手机号
+        function checkTel(tel) {
+            if (!(/^1(3|4|5|7|8)\d{9}$/.test(tel))) {
+                $('#telLabel').html('请填写正确手机号!').attr('class', '').css({
+                    color: 'red'
+                });
+                return false;
+            } else {
+                $('#telLabel').html('手机号').attr('class', 'sr-only');
+                return true;
+            }
+        }
+
+        $('#tel').on('blur', function () {
+            checkTel($(this).val());
+        });
+
+        $('#submit').on('click', function () {
             $username = $('#username').val();
-            $password = $('#password').val();
+            $tel = $('#tel').val();
+            $date = $('#date').val();
+            $content = $('#reason').val();
+            $doctor = $('#doctor').val().substr(-1, 1);
             if ($username === '') {
                 $('#errReason').html('用户名不能为空！');
                 $('#err').modal();
-            } else if ($password === '') {
-                $('#errReason').html('密码不能为空！');
+            } else if (!checkTel($('#tel').val())) {
+                $('#errReason').html('请填写正确手机号!');
                 $('#err').modal();
-            } else {
-                $.post('user/do_login', {
-                    userName: $username,
-                    password: $password
+            } else if ($content === '') {
+                $('#errReason').html('请填写主诉!');
+                $('#err').modal();
+            }
+            else {
+                $.post('user/do_guahao', {
+                    name: $username,
+                    tel: $tel,
+                    date: $date,
+                    content: $content,
+                    doctor: $doctor
                 }, function (res) {
                     if (res === 'success') {
-                        window.location.href = '<?php echo base_url();?>'
+                        $('#modalLabel').html('挂号成功');
+                        $('#errReason').html('点击去首页');
+                        $('#sub').html('去首页').on('click', function () {
+                            window.location.href = 'welcome'
+                        });
+                        $('#err').modal();
                     } else {
-                        $('#errReason').html('用户名或密码错误！');
+                        $('#modalLabel').html('挂号失败');
+                        $('#errReason').html('网络异常');
                         $('#err').modal();
                     }
                 });

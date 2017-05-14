@@ -78,11 +78,14 @@ class User extends CI_Controller
     //挂号
     public function do_guahao()
     {
-        $userName = htmlspecialchars($this->input->post("hzName"));
-        $tel = htmlspecialchars($this->input->post("hzContact"));
-        $time = $this->input->post("hzTime");
+        $name = htmlspecialchars($this->input->post("name"));
+        $tel = htmlspecialchars($this->input->post("tel"));
+        $date = $this->input->post("date");
+        $doctor = $this->input->post("doctor");
         $content = htmlspecialchars($this->input->post("content"));
-        $row = $this->user_model->do_guahao($userName, $tel, $time, $content);
+        $dt = new DateTime();//当前时间
+        $addTime = $dt->format('Y-m-d H:i:s');//预约挂号时间
+        $row = $this->user_model->do_guahao($name, $tel, $date, $content, $doctor, $addTime);
         if ($row) {
             echo "success";
         } else {

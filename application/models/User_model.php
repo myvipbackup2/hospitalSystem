@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_model extends CI_Model
 {
+    //登录（查询用户名和密码）
     public function get_by_username_pwd($username, $password)
     {
         return $this->db->get_where('t_user', array(
@@ -12,6 +13,7 @@ class User_model extends CI_Model
         ))->row();
     }
 
+    //查询用户名
     public function get_by_username($username)
     {
         return $this->db->get_where('t_user', array(
@@ -19,6 +21,7 @@ class User_model extends CI_Model
         ))->row();
     }
 
+    //新增用户
     public function add_user($username, $password)
     {
         $this->db->insert('t_user', array(
@@ -27,13 +30,17 @@ class User_model extends CI_Model
         ));
         return $this->db->insert_id();
     }
-    public function do_guahao($username,$tel,$time,$content)
+
+    //挂号
+    public function do_guahao($name, $tel, $time, $content, $doctor, $addTime)
     {
         $this->db->insert('guahao', array(
-            "hzName" => $username,
+            "hzName" => $name,
             "hzContact" => $tel,
             "hzTime" => $time,
-            "content" => $content
+            "content" => $content,
+            "bztype" => $doctor,
+            "addTime" => $addTime
         ));
         return $this->db->affected_rows();
     }

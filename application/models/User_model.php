@@ -32,7 +32,7 @@ class User_model extends CI_Model
     }
 
     //挂号
-    public function do_guahao($name, $tel, $time, $content, $doctor, $addTime)
+    public function do_guahao($name, $tel, $time, $content, $doctor, $addTime, $user_id)
     {
         $this->db->insert('guahao', array(
             "hzName" => $name,
@@ -40,7 +40,8 @@ class User_model extends CI_Model
             "hzTime" => $time,
             "content" => $content,
             "bztype" => $doctor,
-            "addTime" => $addTime
+            "addTime" => $addTime,
+            "user_id" => $user_id
         ));
         return $this->db->affected_rows();
     }

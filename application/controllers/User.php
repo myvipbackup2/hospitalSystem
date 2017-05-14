@@ -85,7 +85,8 @@ class User extends CI_Controller
         $content = htmlspecialchars($this->input->post("content"));
         $dt = new DateTime();//当前时间
         $addTime = $dt->format('Y-m-d H:i:s');//预约挂号时间
-        $row = $this->user_model->do_guahao($name, $tel, $date, $content, $doctor, $addTime);
+        $user_id = $this->session->userdata('userinfo')->user_id;
+        $row = $this->user_model->do_guahao($name, $tel, $date, $content, $doctor, $addTime, $user_id);
         if ($row) {
             echo "success";
         } else {

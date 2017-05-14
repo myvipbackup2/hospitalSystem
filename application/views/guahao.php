@@ -88,7 +88,6 @@
                     <p><a href="welcome"><i class="	glyphicon glyphicon-arrow-left"></i>返回首页</a></p>
                 </div>
             </form>
-
         </div>
     </div>
     <div class="row" style="padding-top: 60px; clear: both;">

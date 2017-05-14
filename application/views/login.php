@@ -61,7 +61,7 @@
                     <input type="password" class="form-control" id="password" placeholder="请输入密码" autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="remember"><input type="checkbox" id="remember"> 记住我</label>
+                    <label for="remember"><input type="checkbox" checked id="remember"> 记住我</label>
                 </div>
                 <div class="form-group">
                     <p>没有帐号? <a href="welcome/register">注册</a> | <a href="welcome">返回首页</a>

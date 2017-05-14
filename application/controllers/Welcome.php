@@ -38,6 +38,11 @@ class Welcome extends CI_Controller
         }
     }
 
+    public function guahao2()
+    {
+        $this->load->view('guahao2');
+    }
+
     //检测用户是否登录
     public function check_login()
     {

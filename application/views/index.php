@@ -47,7 +47,7 @@
                 <h4><?php echo $login_user->username ?></h4>
             <?php } else { ?>
                 <p>未登录</p>
-                <h4><a style='color: #fff; font-size: ' href="<?php echo base_url(); ?>/welcome/login">请先登录</a></h4>
+                <h4><a style='color: #fff; font-size: ' href="<?php echo base_url(); ?>welcome/login">请先登录</a></h4>
             <?php } ?>
         </div>
         <div class="clearfix"></div>
@@ -303,7 +303,7 @@
             }
         });
         $('#goLogin').on('click', function () {
-            window.location.href = '<?php echo base_url()?>/welcome/login';
+            window.location.href = '<?php echo base_url()?>welcome/login';
         });
     });
 </script>

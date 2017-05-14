@@ -25,7 +25,7 @@ class Welcome extends CI_Controller
     //医生登录后台
     public function doctor()
     {
-
+        redirect('http://127.0.0.1/doctorSystem/site');
     }
 
     //挂号页面

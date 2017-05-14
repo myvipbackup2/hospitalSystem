@@ -137,7 +137,7 @@
                     $('#modalLabel').html('恭喜您');
                     $('#errReason').html('注册成功！');
                     $('#err').modal();
-                    window.location.href = '<?php echo base_url();?>/welcome/login'
+                    window.location.href = '<?php echo base_url();?>welcome/login'
                 } else {
                     $('#errReason').html('未知错误！');
                     $('#err').modal();

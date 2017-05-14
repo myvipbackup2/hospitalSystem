@@ -72,6 +72,7 @@
                         <option>专家3</option>
                         <option>专家4</option>
                         <option>专家5</option>
+                        <option>专家6</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -110,7 +111,7 @@
                 </div>
                 <div class="modal-body" id="errReason">失败原因未知...</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                    <button type="button" id="btn" class="btn btn-primary" data-dismiss="modal">确定</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
@@ -155,16 +156,18 @@
             $content = $('#reason').val();
             $doctor = $('#doctor').val().substr(-1, 1);
             if ($username === '') {
-                $('#errReason').html('用户名不能为空！');
+                $('#errReason').html('姓名不能为空！');
                 $('#err').modal();
             } else if (!checkTel($('#tel').val())) {
                 $('#errReason').html('请填写正确手机号!');
                 $('#err').modal();
-            } else if ($content === '') {
+            } else if (!$date) {
+                $('#errReason').html('请选择预约日期！');
+                $('#err').modal();
+            } else if (!$content) {
                 $('#errReason').html('请填写主诉!');
                 $('#err').modal();
-            }
-            else {
+            } else {
                 $.post('user/do_guahao', {
                     name: $username,
                     tel: $tel,
@@ -174,8 +177,8 @@
                 }, function (res) {
                     if (res === 'success') {
                         $('#modalLabel').html('挂号成功');
-                        $('#errReason').html('点击去首页');
-                        $('#sub').html('去首页').on('click', function () {
+                        $('#errReason').html('挂号成功，点击去首页');
+                        $('#btn').html('去首页').on('click', function () {
                             window.location.href = 'welcome'
                         });
                         $('#err').modal();

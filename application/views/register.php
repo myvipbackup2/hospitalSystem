@@ -33,7 +33,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
-            <!-- Start Sign In Form -->
             <div class="fh5co-form animate-box" data-animate-effect="fadeIn">
                 <h2>用户注册</h2>
                 <div class="form-group">
@@ -58,8 +57,6 @@
                     <input type="submit" id="register" value="注册" class="btn btn-primary">
                 </div>
             </div>
-            <!-- END Sign In Form -->
-
         </div>
     </div>
     <div class="row" style="padding-top: 60px; clear: both;">

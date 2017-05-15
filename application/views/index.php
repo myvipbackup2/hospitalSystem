@@ -53,11 +53,9 @@
         <div class="clearfix"></div>
     </div>
 </div>
-<!--//header-->
-<!--header-bottom-->
+
 <div class="header-bottom">
     <div class="container">
-        <!--top-nav-->
         <div class="top-nav cl-effect-5">
             <span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>
             <ul class="nav1">
@@ -90,7 +88,6 @@
         <!-- banner-text Slider starts Here -->
         <script src="js/responsiveslides.min.js"></script>
         <script>
-            // You can also use "$(window).load(function() {"
             $(function () {
                 // Slideshow 4
                 $("#slider3").responsiveSlides({
@@ -283,7 +280,7 @@
 
 <!--smooth-scrolling-of-move-up-->
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(function () {
         $().UItoTop({easingType: 'easeOutQuart'});
     });
 </script>

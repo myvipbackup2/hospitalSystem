@@ -71,7 +71,6 @@
                     <input type="submit" id="login" value="登录" class="btn btn-primary">
                 </div>
             </div>
-            <!-- END Sign In Form -->
 
         </div>
     </div>
